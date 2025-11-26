@@ -1,0 +1,20 @@
+{
+  "name": "todo_list_backend",
+  "version": "1.0.0",
+  "description": "Backend for Todo List Application (Express + JSON file storage)",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
+
