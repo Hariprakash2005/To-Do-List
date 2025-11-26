@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List Application</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Todo List</h1>
+      <div class="theme-toggle" id="themeToggle" title="Toggle theme">🌓</div>
+    </header>
+
+    <section class="composer">
+      <input id="newTodoInput" type="text" placeholder="What needs to be done?" autocomplete="off" />
+      <button id="addTodoBtn" aria-label="Add todo">Add</button>
+    </section>
+
+    <section class="toolbar">
+      <div class="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="active">Active</button>
+        <button class="filter" data-filter="completed">Completed</button>
+      </div>
+      <div class="actions">
+        <span id="itemsLeft">0 items left</span>
+        <button id="clearCompletedBtn">Clear completed</button>
+      </div>
+    </section>
+
+    <ul id="todoList" class="todo-list"></ul>
+  </div>
+
+  <template id="todoItemTemplate">
+    <li class="todo-item">
+      <label class="checkbox">
+        <input type="checkbox" class="toggle" />
+        <span class="checkmark"></span>
+      </label>
+      <div class="title" contenteditable="false"></div>
+      <div class="item-actions">
+        <button class="edit" title="Edit">✏️</button>
+        <button class="delete" title="Delete">🗑️</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="app.js" type="module"></script>
+  <script>
+    // Prefer dark mode if system prefers
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) document.documentElement.dataset.theme = 'dark';
+  </script>
+</body>
+<!-- Made with ❤️  -->
+</html>
+
+
